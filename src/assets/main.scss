@@ -77,8 +77,13 @@ body {
   }
 }
 
-.v-card {
-  border-radius: 20px;
+.v-card,.v-overlay__content {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.v-overlay__content {
+  background-color: $surface-color;
 }
 
 .v-btn {
@@ -111,7 +116,7 @@ body {
 
 @keyframes fade {
   to {
-    transform: translateY(-150px);
+    transform: translateY(-50vh);
   }
 }
 

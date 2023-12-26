@@ -160,9 +160,7 @@
                     aliqua.</v-card-text
                   >
                   <v-card-actions>
-                    <v-btn prepend-icon="mdi-plus" variant="tonal">
-                      learn more
-                    </v-btn>
+                    <ProjectDetails :p="p" />
                   </v-card-actions>
                 </v-card>
               </v-timeline-item>
@@ -196,9 +194,7 @@
                   aliqua.</v-card-text
                 >
                 <v-card-actions>
-                  <v-btn prepend-icon="mdi-plus" variant="tonal">
-                    learn more
-                  </v-btn>
+                  <ProjectDetails :p="p" />
                 </v-card-actions>
               </v-card>
             </div>
@@ -223,9 +219,14 @@
 <script>
 import animate from "./bgWave";
 import moment from "moment";
+import ProjectDetails from "./ProjectDetails.vue";
 import "moment/locale/fr";
 
+import rbk1 from "./assets/projects/rbk-1.jpg";
+import rbk2 from "./assets/projects/rbk-2.jpg";
+
 export default {
+  components: { ProjectDetails },
   data() {
     return {
       lang: "en",
@@ -255,6 +256,11 @@ export default {
             "devicon-html5-plain-wordmark colored",
             "devicon-css3-plain-wordmark colored",
           ],
+          images: [rbk1, rbk2],
+          text: `Lorem Ipsum is simply dummy text of the printing
+           and typesetting industry. Lorem Ipsum has been the industry's 
+           standard dummy text ever since the 1500s, when an unknown printer took a 
+           galley of type and scrambled it to make a type specimen book.`,
         },
         {
           date: new Date(),
@@ -264,12 +270,20 @@ export default {
             "devicon-vuejs-plain colored",
             "devicon-express-original colored",
           ],
+          text: `Lorem Ipsum is simply dummy text of the printing
+           and typesetting industry. Lorem Ipsum has been the industry's 
+           standard dummy text ever since the 1500s, when an unknown printer took a 
+           galley of type and scrambled it to make a type specimen book.`,
         },
         {
           date: new Date(),
           title: "Euromedi - Auditor",
           subtitle: "Freelance project | Front-end manager",
           icons: ["devicon-vuejs-plain colored"],
+           text: `Lorem Ipsum is simply dummy text of the printing
+           and typesetting industry. Lorem Ipsum has been the industry's 
+           standard dummy text ever since the 1500s, when an unknown printer took a 
+           galley of type and scrambled it to make a type specimen book.`,
         },
         {
           date: new Date(),
@@ -278,7 +292,12 @@ export default {
           icons: [
             "devicon-react-plain colored",
             "devicon-angularjs-plain colored",
+            "devicon-figma-plain colored",
           ],
+          text: `Lorem Ipsum is simply dummy text of the printing
+           and typesetting industry. Lorem Ipsum has been the industry's 
+           standard dummy text ever since the 1500s, when an unknown printer took a 
+           galley of type and scrambled it to make a type specimen book.`,
         },
         {
           date: new Date(),
@@ -288,6 +307,10 @@ export default {
             "devicon-flutter-plain colored",
             "devicon-nestjs-plain colored",
           ],
+          text: `Lorem Ipsum is simply dummy text of the printing
+           and typesetting industry. Lorem Ipsum has been the industry's 
+           standard dummy text ever since the 1500s, when an unknown printer took a 
+           galley of type and scrambled it to make a type specimen book.`,
         },
       ],
     };
@@ -318,6 +341,15 @@ export default {
       },
       false
     );
+
+    document.querySelectorAll("#skills .v-card").forEach((el) => {
+      el.addEventListener("mouseenter", () =>
+        el.querySelector(".devicon").classList.add("colored")
+      );
+      el.addEventListener("mouseleave", () =>
+        el.querySelector(".devicon").classList.remove("colored")
+      );
+    });
 
     const elements = document.getElementsByClassName("devicon");
     Array(elements.length)
