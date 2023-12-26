@@ -51,7 +51,10 @@
     <v-main>
       <div class="container">
         <section id="about">
-          <div style="display: flex; justify-content: space-between">
+          <div
+            class="animate__animated animate__fadeInDown"
+            style="display: flex; justify-content: space-between"
+          >
             <div class="section-title">
               <h1>About</h1>
               <v-divider class="border-opacity-100" :thickness="2"></v-divider>
@@ -85,6 +88,11 @@
           </div>
         </section>
       </div>
+
+      <canvas
+        class="animate__animated animate__fadeInUp"
+        id="animation"
+      ></canvas>
       <section id="skills">
         <v-sheet>
           <div class="container">
@@ -116,7 +124,12 @@
               <v-divider class="border-opacity-100" :thickness="2"></v-divider>
             </div>
 
-            <v-timeline align="start" line-inset="12" side="end">
+            <v-timeline
+              class="my-5 hidden-sm-and-down"
+              align="start"
+              line-inset="12"
+              side="end"
+            >
               <v-timeline-item v-for="(p, index) in projects" :key="index">
                 <template v-slot:opposite>
                   {{ moment(p.date).locale(lang).format("MMM Do Y") }}
@@ -154,20 +167,61 @@
                 </v-card>
               </v-timeline-item>
             </v-timeline>
+
+            <!-- FOR MOBILE -->
+            <div class="hidden-md-and-up py-5">
+              <v-card
+                v-for="(p, index) in projects"
+                :key="index"
+                :title="p.title"
+                :subtitle="p.subtitle"
+                class="project my-3"
+              >
+                <template v-slot:append>
+                  <div class="project-stack">
+                    <v-tooltip
+                      v-for="(icon, index) in p.icons"
+                      :key="index"
+                      :text="icon.split('-')[1]"
+                    >
+                      <template v-slot:activator="{ props }">
+                        <i :class="icon" v-bind="props"></i>
+                      </template>
+                    </v-tooltip>
+                  </div>
+                </template>
+                <v-card-text
+                  >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  seddo eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.</v-card-text
+                >
+                <v-card-actions>
+                  <v-btn prepend-icon="mdi-plus" variant="tonal">
+                    learn more
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </div>
           </div>
         </v-sheet>
       </section>
 
-      <canvas
-        class="animate__animated animate__fadeInUp"
-        id="animation"
-      ></canvas>
+      <section id="contact">
+        <v-sheet>
+          <div class="container">
+            <div class="section-title white">
+              <h1>Contact</h1>
+              <v-divider class="border-opacity-100" :thickness="2"></v-divider>
+            </div>
+          </div>
+        </v-sheet>
+      </section>
     </v-main>
   </v-layout>
 </template>
 
 <script>
-import animate from "./animation";
+import animate from "./bgWave";
 import moment from "moment";
 import "moment/locale/fr";
 

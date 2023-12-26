@@ -13,10 +13,17 @@ $border-radius: 10px;
 #animation {
   position: fixed;
   bottom: 0;
-  height: 40vh !important;
+  height: 45vh !important;
   z-index: -1;
 }
 
+#network-animation {
+  position: fixed;
+  bottom: 0;
+  div {
+    display: none;
+  }
+}
 body {
   background: rgb(238, 238, 238);
   font-family: Comfortaa;
