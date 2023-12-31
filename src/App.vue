@@ -2,7 +2,7 @@
   <v-layout>
     <v-navigation-drawer v-model="menu" :width="80">
       <div class="nav-list">
-        <v-tooltip offset="25" text="About">
+        <v-tooltip offset="25" :text="$t('sections.about')">
           <template v-slot:activator="{ props }">
             <a
               v-bind="props"
@@ -13,7 +13,7 @@
             </a>
           </template>
         </v-tooltip>
-        <v-tooltip offset="25" text="Skills">
+        <v-tooltip offset="25" :text="$t('sections.skills')">
           <template v-slot:activator="{ props }">
             <a
               v-bind="props"
@@ -24,7 +24,7 @@
             </a>
           </template>
         </v-tooltip>
-        <v-tooltip offset="25" text="Background">
+        <v-tooltip offset="25" :text="$t('sections.background')">
           <template v-slot:activator="{ props }">
             <a
               v-bind="props"
@@ -35,7 +35,7 @@
             </a>
           </template>
         </v-tooltip>
-        <v-tooltip offset="25" text="Contact">
+        <v-tooltip offset="25" :text="$t('sections.contact')">
           <template v-slot:activator="{ props }">
             <a
               v-bind="props"
@@ -56,12 +56,12 @@
             style="display: flex; justify-content: space-between"
           >
             <div class="section-title">
-              <h1>About</h1>
+              <h1>{{ $t("sections.about") }}</h1>
               <v-divider class="border-opacity-100" :thickness="2"></v-divider>
             </div>
             <div>
               <v-select
-                v-model="lang"
+                v-model="$i18n.locale"
                 :items="[
                   { title: 'English', value: 'en' },
                   { title: 'Francais', value: 'fr' },
@@ -77,13 +77,7 @@
             </div>
             <div class="info animate__animated animate__fadeInRight">
               <div>HABIB BEKIR</div>
-              <div>
-                Devices should feel personal. Individual choices for device
-                color and form are brought to life through software. Dynamic
-                color extraction imbues the system with a personal aesthetic,
-                while changes in shape and lighting combine to create a
-                holistic, resonant experience.
-              </div>
+              <div v-html="$t('bio', [25])"></div>
             </div>
           </div>
         </section>
@@ -97,7 +91,7 @@
         <v-sheet>
           <div class="container">
             <div class="section-title white">
-              <h1>Skills</h1>
+              <h1>{{ $t("sections.skills") }}</h1>
               <v-divider class="border-opacity-100" :thickness="2"></v-divider>
             </div>
 
@@ -120,7 +114,7 @@
         <v-sheet color="secondary">
           <div class="container">
             <div class="section-title">
-              <h1>Background</h1>
+              <h1>{{ $t("sections.background") }}</h1>
               <v-divider class="border-opacity-100" :thickness="2"></v-divider>
             </div>
 
@@ -132,7 +126,7 @@
             >
               <v-timeline-item v-for="(p, index) in projects" :key="index">
                 <template v-slot:opposite>
-                  {{ moment(p.date).locale(lang).format("MMM Do Y") }}
+                  {{ moment(p.date).locale($i18n.locale).format("MMM Do Y") }}
                 </template>
 
                 <v-card
@@ -140,6 +134,7 @@
                   :subtitle="p.subtitle"
                   class="project"
                   max-width="600"
+                  :max-height="280"
                 >
                   <template v-slot:append>
                     <div class="project-stack">
@@ -154,13 +149,13 @@
                       </v-tooltip>
                     </div>
                   </template>
-                  <v-card-text
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    seddo eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.</v-card-text
-                  >
+
+                  <v-card-text tag="p">
+                    {{ p.text }}
+                  </v-card-text>
+
                   <v-card-actions>
-                    <ProjectDetails :p="p" />
+                    <ProjectDetails :moment="moment" :p="p" />
                   </v-card-actions>
                 </v-card>
               </v-timeline-item>
@@ -174,6 +169,7 @@
                 :title="p.title"
                 :subtitle="p.subtitle"
                 class="project my-3"
+                :max-height="280"
               >
                 <template v-slot:append>
                   <div class="project-stack">
@@ -188,13 +184,11 @@
                     </v-tooltip>
                   </div>
                 </template>
-                <v-card-text
-                  >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  seddo eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua.</v-card-text
-                >
+                <v-card-text tag="p">
+                  {{ p.text }}
+                </v-card-text>
                 <v-card-actions>
-                  <ProjectDetails :p="p" />
+                  <ProjectDetails :moment="moment" :p="p" />
                 </v-card-actions>
               </v-card>
             </div>
@@ -208,6 +202,72 @@
             <div class="section-title white">
               <h1>Contact</h1>
               <v-divider class="border-opacity-100" :thickness="2"></v-divider>
+            </div>
+            <div class="container">
+              <v-row class="my-3" justify="center">
+                <v-col cols="12" sm="3">
+                  <div>
+                    <ul>
+                      <li>Habib.bekir@gmail.com</li>
+                      <li>+216 24 440 222</li>
+                      <li>+216 99 760 334</li>
+                    </ul>
+                  </div>
+                </v-col>
+                <v-col class="text-center" cols="12" sm="3">
+                  <ul style="list-style-type: none">
+                    <li>
+                      <i class="devicon-github-original"></i>
+                      <a href="https://github.com/Hbib24" target="_blank"
+                        >Github/Hbib24</a
+                      >
+                    </li>
+                    <li>
+                      <i class="devicon-linkedin-plain colored"></i>
+                      <a
+                        href="https://www.linkedin.com/in/hbib-bekir/"
+                        target="_blank"
+                        >In/hbib-bekir
+                      </a>
+                    </li>
+                  </ul>
+                </v-col>
+                <v-col cols="12" sm="3">
+                  <div
+                    class="d-flex justify-center align-center"
+                    style="flex-direction: column; gap: 12px"
+                  >
+                    <v-btn
+                      max-width="200"
+                      variant="tonal"
+                      prepend-icon="mdi-download"
+                      @click="download('en')"
+                      >resume (EN)</v-btn
+                    >
+                    <v-btn
+                      max-width="200"
+                      variant="tonal"
+                      prepend-icon="mdi-download"
+                      @click="download('fr')"
+                      >resume (FR)</v-btn
+                    >
+                  </div>
+                </v-col>
+              </v-row>
+
+              <v-divider class="border-opacity-100" color="white"></v-divider>
+              <div class="mt-3 text-white text-center w-100">
+                This website was made with
+                <v-tooltip location="top" text="愛"
+                  ><template v-slot:activator="{ props }"
+                    ><v-icon
+                      v-bind="props"
+                      color="pink"
+                      icon="mdi-heart"
+                    ></v-icon></template
+                ></v-tooltip>
+                by yours truly
+              </div>
             </div>
           </div>
         </v-sheet>
@@ -225,11 +285,11 @@ import "moment/locale/fr";
 import rbk1 from "./assets/projects/rbk-1.jpg";
 import rbk2 from "./assets/projects/rbk-2.jpg";
 
+import pdfFr from "./assets/Habib-Bekir-fr.pdf";
 export default {
   components: { ProjectDetails },
   data() {
     return {
-      lang: "en",
       moment: moment,
       menu: true,
       skills: [
@@ -260,6 +320,9 @@ export default {
           text: `Lorem Ipsum is simply dummy text of the printing
            and typesetting industry. Lorem Ipsum has been the industry's 
            standard dummy text ever since the 1500s, when an unknown printer took a 
+           galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing
+           and typesetting industry. Lorem Ipsum has been the industry's 
+           standard dummy text ever since the 1500s, when an unknown printer took a 
            galley of type and scrambled it to make a type specimen book.`,
         },
         {
@@ -280,7 +343,7 @@ export default {
           title: "Euromedi - Auditor",
           subtitle: "Freelance project | Front-end manager",
           icons: ["devicon-vuejs-plain colored"],
-           text: `Lorem Ipsum is simply dummy text of the printing
+          text: `Lorem Ipsum is simply dummy text of the printing
            and typesetting industry. Lorem Ipsum has been the industry's 
            standard dummy text ever since the 1500s, when an unknown printer took a 
            galley of type and scrambled it to make a type specimen book.`,
@@ -324,6 +387,16 @@ export default {
         block: "start",
       });
     },
+    download(lang) {
+      const a = document.createElement("a");
+      a.href = pdfFr;
+      a.target = "_blank";
+      a.download = "Habib.Bekir.pdf";
+
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    },
   },
   beforeMount() {
     this.menu = window.innerWidth > 1280;
@@ -360,3 +433,11 @@ export default {
   },
 };
 </script>
+
+<style>
+p {
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

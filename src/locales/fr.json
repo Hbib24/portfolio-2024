@@ -1,0 +1,13 @@
+{
+  "bio": "Bonjour.<br />Merci d'avoir consulté mon portfolio, je suis ravi de vous présenter ma carrière de développeur web/mobile dont je suis très fier et heureux. <br />J'ai actuellement {0} ans, je réside en Tunisie et je suis employé à temps plein dans une startup en croissance rapide mais je travaille également en freelance pour divers clients, quant à mes passe-temps, je suis un geek dans l'âme, depuis l'âge de 8 ans, j'ai toujours aimé les ordinateurs et les jeux vidéo.",
+  "sections": {
+    "about": "A propos",
+    "skills": "Compétences",
+    "background": "Experience",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "close": "Fermer",
+    "learnMore": "En savoir plus"
+  }
+}

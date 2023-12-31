@@ -77,7 +77,8 @@ body {
   }
 }
 
-.v-card,.v-overlay__content {
+.v-card:not(.v-bottom-sheet .v-card),
+.v-overlay__content:not(.v-bottom-sheet .v-overlay__content) {
   border-radius: 20px !important;
   overflow: hidden;
 }
@@ -145,10 +146,9 @@ body {
 .avatar {
   img {
     height: 354.069px;
-    border-radius: 31px;
 
     @media (max-width: 992px) {
-      height: calc(354.069px * 0.8);
+      height: 25vh;
     }
   }
 }
@@ -156,7 +156,7 @@ body {
 .info {
   :first-child {
     font-family: Comfortaa;
-    font-size: 56px;
+    font-size: 3rem;
     font-weight: 500;
     background: linear-gradient(90deg, #926bcc 2.78%, #8b97db 73.56%);
     background-clip: text;
@@ -169,4 +169,19 @@ body {
   display: flex;
   gap: 8px;
   font-size: 30px;
+}
+
+#contact .v-row {
+  font-size: 17px;
+  color: white;
+  ul {
+    line-height: 35px;
+  }
+  a {
+    margin-left: 10px;
+    color: white;
+  }
+  i {
+    font-size: 20px;
+  }
 }

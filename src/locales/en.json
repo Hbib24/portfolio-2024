@@ -1,0 +1,14 @@
+{
+  "bio": "Hey there.<br />Thanks for checking out my portfolio, I'm delighted to introduce you to my web/mobile development career in which I take great pride and joy. <br />I'm currently {0} years old residing in Tunisia and employed full-time at a rapidly growing startup but also working as a freelancer for various clients, as for my hobbies I'm a geek at heart, since the age of 8 I always loved computers and video games.",
+  "sections": {
+    "about": "About",
+    "skills": "Skills",
+    "background": "Background",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "close": "Close",
+    "learnMore": "Learn more"
+  },
+  "projects": {}
+}
