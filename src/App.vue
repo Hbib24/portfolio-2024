@@ -315,7 +315,7 @@ export default {
       ],
       projects: [
         {
-          date: new Date("08-01-2022"),
+          date: new Date("08-01-2021"),
           title: "RBK Reboot camp",
           subtitle: "Fullstack Javascript certification",
           icons: [
@@ -328,7 +328,7 @@ export default {
           text: "projects.rbk",
         },
         {
-          date: new Date(),
+          date: new Date("02-01-2022"),
           title: "Adrissa",
           videos: [
             {
@@ -343,14 +343,14 @@ export default {
           text: "projects.adrissa",
         },
         {
-          date: new Date(),
+          date: new Date("02-01-2022"),
           title: "Euromedi - Auditor",
           subtitle: "Freelance project | Front-end manager",
           icons: ["devicon-vuejs-plain colored"],
           text: "projects.euromedi",
         },
         {
-          date: new Date(),
+          date: new Date("06-01-2022"),
           title: "UI/UX developer at Insight Plus",
           subtitle: "Indeterminate contract",
           icons: [
@@ -361,7 +361,7 @@ export default {
           text: "projects.insight",
         },
         {
-          date: new Date(),
+          date: new Date("03-01-2023"),
           title: "ATAA",
           subtitle: "Freelance project | Fullstack",
           icons: [
