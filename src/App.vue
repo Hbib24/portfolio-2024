@@ -77,7 +77,7 @@
             </div>
             <div class="info animate__animated animate__fadeInRight">
               <div>HABIB BEKIR</div>
-              <div v-html="$t('bio', [25])"></div>
+              <div v-html="$t('bio', [26])"></div>
             </div>
           </div>
         </section>
@@ -120,13 +120,16 @@
 
             <v-timeline
               class="my-5 hidden-sm-and-down"
-              align="start"
               line-inset="12"
               side="end"
             >
-              <v-timeline-item v-for="(p, index) in projects" :key="index">
+              <v-timeline-item
+                dot-color="#141218"
+                v-for="(p, index) in projects"
+                :key="index"
+              >
                 <template v-slot:opposite>
-                  {{ moment(p.date).locale($i18n.locale).format("MMM Do Y") }}
+                  {{ $moment(p.date).locale($i18n.locale).format("MMM Y") }}
                 </template>
 
                 <v-card
@@ -151,11 +154,11 @@
                   </template>
 
                   <v-card-text tag="p">
-                    {{ p.text }}
+                    {{ $t(p.text) }}
                   </v-card-text>
 
                   <v-card-actions>
-                    <ProjectDetails :moment="moment" :p="p" />
+                    <ProjectDetails :moment="$moment" :p="p" />
                   </v-card-actions>
                 </v-card>
               </v-timeline-item>
@@ -188,7 +191,7 @@
                   {{ p.text }}
                 </v-card-text>
                 <v-card-actions>
-                  <ProjectDetails :moment="moment" :p="p" />
+                  <ProjectDetails :moment="$moment" :p="p" />
                 </v-card-actions>
               </v-card>
             </div>
@@ -278,9 +281,9 @@
 
 <script>
 import animate from "./bgWave";
-import moment from "moment";
 import ProjectDetails from "./ProjectDetails.vue";
-import "moment/locale/fr";
+import moment from "moment/dist/moment";
+import "moment/dist/locale/fr";
 
 import rbk1 from "./assets/projects/rbk-1.jpg";
 import rbk2 from "./assets/projects/rbk-2.jpg";
@@ -288,9 +291,14 @@ import rbk2 from "./assets/projects/rbk-2.jpg";
 import pdfFr from "./assets/Habib-Bekir-fr.pdf";
 export default {
   components: { ProjectDetails },
+  watch: {
+    "$i18n.locale"(lang) {
+      moment.locale(lang);
+    },
+  },
   data() {
     return {
-      moment: moment,
+      $moment: moment,
       menu: true,
       skills: [
         { name: "Javscript", icon: "javascript-plain" },
@@ -307,7 +315,7 @@ export default {
       ],
       projects: [
         {
-          date: new Date(),
+          date: new Date("08-01-2022"),
           title: "RBK Reboot camp",
           subtitle: "Fullstack Javascript certification",
           icons: [
@@ -317,36 +325,29 @@ export default {
             "devicon-css3-plain-wordmark colored",
           ],
           images: [rbk1, rbk2],
-          text: `Lorem Ipsum is simply dummy text of the printing
-           and typesetting industry. Lorem Ipsum has been the industry's 
-           standard dummy text ever since the 1500s, when an unknown printer took a 
-           galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing
-           and typesetting industry. Lorem Ipsum has been the industry's 
-           standard dummy text ever since the 1500s, when an unknown printer took a 
-           galley of type and scrambled it to make a type specimen book.`,
+          text: "projects.rbk",
         },
         {
           date: new Date(),
           title: "Adrissa",
+          videos: [
+            {
+              url: "https://www.youtube.com/embed/mcAz0q1xKPU?si=ks6nonII_oedXymO",
+            },
+          ],
           subtitle: "Freelance project | Fullstack",
           icons: [
             "devicon-vuejs-plain colored",
             "devicon-express-original colored",
           ],
-          text: `Lorem Ipsum is simply dummy text of the printing
-           and typesetting industry. Lorem Ipsum has been the industry's 
-           standard dummy text ever since the 1500s, when an unknown printer took a 
-           galley of type and scrambled it to make a type specimen book.`,
+          text: "projects.adrissa",
         },
         {
           date: new Date(),
           title: "Euromedi - Auditor",
           subtitle: "Freelance project | Front-end manager",
           icons: ["devicon-vuejs-plain colored"],
-          text: `Lorem Ipsum is simply dummy text of the printing
-           and typesetting industry. Lorem Ipsum has been the industry's 
-           standard dummy text ever since the 1500s, when an unknown printer took a 
-           galley of type and scrambled it to make a type specimen book.`,
+          text: "projects.euromedi",
         },
         {
           date: new Date(),
@@ -357,10 +358,7 @@ export default {
             "devicon-angularjs-plain colored",
             "devicon-figma-plain colored",
           ],
-          text: `Lorem Ipsum is simply dummy text of the printing
-           and typesetting industry. Lorem Ipsum has been the industry's 
-           standard dummy text ever since the 1500s, when an unknown printer took a 
-           galley of type and scrambled it to make a type specimen book.`,
+          text: "projects.insight",
         },
         {
           date: new Date(),
@@ -370,10 +368,7 @@ export default {
             "devicon-flutter-plain colored",
             "devicon-nestjs-plain colored",
           ],
-          text: `Lorem Ipsum is simply dummy text of the printing
-           and typesetting industry. Lorem Ipsum has been the industry's 
-           standard dummy text ever since the 1500s, when an unknown printer took a 
-           galley of type and scrambled it to make a type specimen book.`,
+          text: "projects.ataa",
         },
       ],
     };

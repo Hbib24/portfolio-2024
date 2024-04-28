@@ -15,6 +15,9 @@ $border-radius: 10px;
   bottom: 0;
   height: 45vh !important;
   z-index: -1;
+  @media (max-width: 992px) {
+    display: none !important;
+  }
 }
 
 #network-animation {
@@ -156,7 +159,8 @@ body {
 .info {
   :first-child {
     font-family: Comfortaa;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
     font-weight: 500;
     background: linear-gradient(90deg, #926bcc 2.78%, #8b97db 73.56%);
     background-clip: text;

@@ -12,13 +12,18 @@
     </template>
 
     <template v-slot:default="{ isActive }">
-      <vueper-slides autoplay>
-        <vueper-slide v-for="(img, i) of p.images" :key="i" :image="img" />
+      <vueper-slides>
+        <template v-if="p.videos?.length">
+          <vueper-slide v-for="(vid, i) of p.videos" :key="i" :video="vid" />
+        </template>
+        <template v-if="p.images?.length">
+          <vueper-slide v-for="(img, i) of p.images" :key="i" :image="img" />
+        </template>
       </vueper-slides>
       <v-card
         :title="p.title"
         :subtitle="`${p.subtitle} - ${moment(p.date).format('MMM Do Y')}`"
-        :text="p.text"
+        :text="$t(p.text)"
       >
         <template v-slot:append>
           <div class="project-stack">
@@ -61,8 +66,13 @@
     </template>
 
     <template v-slot:default="{ isActive }">
-      <vueper-slides autoplay>
-        <vueper-slide v-for="(img, i) of p.images" :key="i" :image="img" />
+      <vueper-slides>
+        <template v-if="p.videos?.length">
+          <vueper-slide v-for="(vid, i) of p.videos" :key="i" :video="vid" />
+        </template>
+        <template v-if="p.images?.length">
+          <vueper-slide v-for="(img, i) of p.images" :key="i" :image="img" />
+        </template>
       </vueper-slides>
       <div class="card-container">
         <v-card
@@ -83,7 +93,7 @@
               </v-tooltip>
             </div>
             <p class="mt-3">
-              {{ p.text }}
+              {{ $t(p.text) }}
             </p>
           </v-card-text>
 
