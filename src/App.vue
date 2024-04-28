@@ -188,7 +188,7 @@
                   </div>
                 </template>
                 <v-card-text tag="p">
-                  {{ p.text }}
+                  {{ $t(p.text) }}
                 </v-card-text>
                 <v-card-actions>
                   <ProjectDetails :moment="$moment" :p="p" />
