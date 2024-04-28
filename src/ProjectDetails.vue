@@ -22,7 +22,7 @@
       </vueper-slides>
       <v-card
         :title="p.title"
-        :subtitle="`${p.subtitle} - ${moment(p.date).format('MMM Do Y')}`"
+        :subtitle="`${p.subtitle} - ${moment(p.date).format('MMM Y')}`"
         :text="$t(p.text)"
       >
         <template v-slot:append>
@@ -78,7 +78,7 @@
         <v-card
           height="100%"
           :title="p.title"
-          :subtitle="`${p.subtitle} - ${moment(p.date).format('MMM Do Y')}`"
+          :subtitle="`${p.subtitle} - ${moment(p.date).format('MMM Y')}`"
         >
           <v-card-text>
             <div class="project-stack">
