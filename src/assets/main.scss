@@ -20,6 +20,11 @@ $border-radius: 10px;
   }
 }
 
+.v-card-text p {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 #network-animation {
   position: fixed;
   bottom: 0;
