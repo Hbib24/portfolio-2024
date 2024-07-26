@@ -3,6 +3,22 @@ import Career from "../components/Career.vue";
 import Skills from "../components/Skills.vue";
 export default {
   components: { Skills, Career },
+  data() {
+    return {
+      scroll: 0,
+    };
+  },
+  methods: {
+    handleScroll() {
+      this.scroll = window.scrollY;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
 };
 </script>
 
@@ -15,7 +31,10 @@ export default {
         <div
           class="md:rounded-2xl h-full w-full bg-white dark:bg-slate-950 shadow-inner p-6"
         >
-          <div class="flex flex-col h-full items-center justify-center">
+          <div
+            :style="{ transform: `translateY(${scroll * 0.5}px)` }"
+            class="flex flex-col h-full items-center justify-center"
+          >
             <h1
               class="mb-4 text-4xl tracking-widest font-extrabold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white animate__animated animate__fadeIn"
             >
@@ -54,10 +73,12 @@ export default {
       ------------------------->
         <div
           id="devices"
+          :style="{ transform: `translateY(${scroll * 0.7}px)` }"
           class="absolute z-10 flex md:gap-16 gap-8 mx-auto items-center justify-center -bottom-20 md:-bottom-60 -left-1/2 -right-1/2"
         >
+          <!-- rest of the code -->
           <div
-            class="animate__animated animate__fadeInUp"
+            class="animate__animated animate__fadeInUp z-10"
             style="animation-delay: 600ms"
           >
             <div
@@ -161,11 +182,11 @@ export default {
       </div>
     </section>
 
-    <section id="skills" class="w-full py-10 md:py-20">
+    <section id="skills" class="w-full py-10 md:py-20 z-20">
       <Skills />
     </section>
 
-    <section id="career" class="w-full">
+    <section id="career" class="w-full z-20">
       <Career />
     </section>
   </div>

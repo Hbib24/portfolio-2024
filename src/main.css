@@ -9,3 +9,9 @@
 body {
   overflow-x: hidden;
 }
+
+#devices {
+  @media (max-height: 900px) and (min-width: 1024px) {
+    bottom: -20rem;
+  }
+}
