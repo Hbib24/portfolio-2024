@@ -1,0 +1,25 @@
+{
+  "bio": "Bonjour.<br />Merci d'avoir consulté mon portfolio, je suis ravi de vous présenter ma carrière de développeur web/mobile dont je suis très fier et heureux. <br />J'ai actuellement {0} ans, je réside en Tunisie et je suis employé à temps plein dans une startup en croissance rapide mais je travaille également en freelance pour divers clients, quant à mes passe-temps, je suis un geek dans l'âme, depuis l'âge de 8 ans, j'ai toujours aimé les ordinateurs et les jeux vidéo.",
+  "sections": {
+    "about": "A propos",
+    "skills": "Compétences",
+    "background": "Experience",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "close": "Fermer",
+    "learnMore": "En savoir plus"
+  },
+  "projects": {
+    "rbk": "Rbk a été ma première introduction au monde de la programmation et j'en ai adoré chaque seconde, leur façon d'enseigner était \"Apprendre à apprendre\", car le monde de la programmation évolue très rapidement, l'apprentissage d'une technologie spécifique est inévitable. vous êtes obsolète et vous devez donc garder l’esprit ouvert et continuer à apprendre. En développant non seulement mes compétences techniques mais aussi mon intelligence émotionnelle et ma gestion du stress, Rbk a vraiment contribué à optimiser notre intégration dans la vie professionnelle.",
+    "adrissa": "Après avoir obtenu mon certificat fullStack de rbk, j'ai immédiatement essayé de rechercher des opportunités et j'ai trouvé un projet indépendant grâce à l'un de mes anciens professeurs. J'ai donc immédiatement commencé à travailler sur Adrissa, un site Web qui affiche les lieux de rencontre locaux avec des critiques, une carte et une fonction de recherche. . Malheureusement, ce projet n'a jamais été rendu public, mais ce fut une bonne expérience d'apprentissage pour moi.",
+    "euromedi": "Euromedi est une accréditation internationale pour les cliniques, les hôpitaux, les maisons de retraite et plus encore..., j'ai travaillé en étroite collaboration avec des médecins pour réaliser une application privée faisant partie de ce package d'accréditation. l'application est principalement conçue pour les tablettes, car le personnel de l'établissement les transporte et effectue différentes tâches liées à l'accréditation. Je suis fier de savoir que j'ai participé à l'amélioration du système de santé, car l'application est en production depuis 2022. Jusqu'à aujourd'hui, je développe encore de nouveaux projets pour euromedi à distance.",
+    "insight": "Insight plus est une startup fintech basée en Tunisie. C'était ma première expérience dans une société de développement, nous sommes spécialisés dans la création d'outils pour les opérateurs de change et plus encore. Nous nous sommes également associés à des banques nationales pour une plateforme de marché des devises et nous prévoyons d'étendre notre partenariat dans un avenir proche.",
+    "ataa": "Ataa est une application mobile qui vous permet de connecter des associations avec des bénévoles, comme elle est décrite c'est un noble effort pour aider ceux qui en ont besoin, et je suis fier de travailler sur sa conception, son backend ainsi qu'une dashboard d'administrateurs complete avec des statistiques et fonctionnalités d'administration de base. elle n'est actuellement pas rendu public, mais nous avons bien l'intention de la publier dans un avenir proche."
+  },
+  "languages": "Languages",
+  "technologies": "Technologies",
+  "designAndTools": "Design & Outils",
+  "databases": "Bases de données",
+  "others": "Autres"
+}
