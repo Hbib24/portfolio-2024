@@ -24,12 +24,12 @@ export default {
 
 <template>
   <div
-    class="dark:bg-slate-950 md:bg-slate-200 bg-white overflow-hidden md:dark:bg-slate-900 h-full"
+    class="dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 overflow-hidden h-full"
   >
     <div class="relative">
       <section class="h-dvh md:p-6 overflow-hidden">
         <div
-          class="md:rounded-2xl h-full w-full bg-white dark:bg-slate-950 shadow-inner p-6"
+          class="md:rounded-2xl h-full w-full bg-white dark:bg-slate-950 shadow-inner p-6 overflow-hidden"
         >
           <div
             :style="{ transform: `translateY(${scroll * 0.5}px)` }"
@@ -169,7 +169,7 @@ export default {
       </section>
     </div>
 
-    <section id="about" class="w-full relative py-6 z-20">
+    <section id="about" class="w-full relative pt-6 z-20">
       <div
         class="overflow-hidden w-full bg-sky-50 md:bg-white dark:bg-slate-900 md:dark:bg-slate-950 dark:shadow-inner p-6"
       >
@@ -182,12 +182,28 @@ export default {
       </div>
     </section>
 
-    <section id="skills" class="w-full py-10 md:py-20 z-20">
+    <section
+      id="skills"
+      class="w-full py-10 md:py-20 relative z-20 dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900"
+    >
       <Skills />
     </section>
 
-    <section id="career" class="w-full z-20">
+    <section id="career" class="w-full z-20 relative">
       <Career />
+    </section>
+
+    <section
+      id="contact"
+      class="w-full z-20 relative dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 p-6"
+    >
+      <div class="flex flex-wrap justify-around">
+        <div class="flex flex-col gap-3">
+          <div>Habib.bekir@gmail.com</div>
+          <div>+216 24 440 222</div>
+          <div>+216 99 760 334</div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
