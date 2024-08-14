@@ -1,6 +1,7 @@
 <script>
 import Career from "../components/Career.vue";
 import Skills from "../components/Skills.vue";
+
 export default {
   components: { Skills, Career },
   data() {
@@ -76,7 +77,6 @@ export default {
           :style="{ transform: `translateY(${scroll * 0.7}px)` }"
           class="absolute z-10 flex md:gap-16 gap-8 mx-auto items-center justify-center -bottom-20 md:-bottom-60 -left-1/2 -right-1/2"
         >
-          <!-- rest of the code -->
           <div
             class="animate__animated animate__fadeInUp z-10"
             style="animation-delay: 600ms"
@@ -195,14 +195,58 @@ export default {
 
     <section
       id="contact"
-      class="w-full z-20 relative dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 p-6"
+      class="w-full z-20 relative text-lg dark:text-gray-200 dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 p-6"
     >
-      <div class="flex flex-wrap justify-around">
+      <div
+        class="flex flex-wrap justify-around items-center mt-12 mb-12 max-w-screen-xl mx-auto"
+      >
         <div class="flex flex-col gap-3">
-          <div>Habib.bekir@gmail.com</div>
-          <div>+216 24 440 222</div>
-          <div>+216 99 760 334</div>
+          <a class="flex items-center gap-2" href="mailto:habib.bekir@gmail.com"
+            ><span class="material-symbols-outlined"> mail </span>
+            Habib.bekir@gmail.com</a
+          >
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined"> call </span>
+            <span class="rounded bg-slate-300 dark:bg-slate-700 px-1"
+              >+216</span
+            >
+            24 440 222
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined"> call </span>
+            <span class="rounded bg-slate-300 dark:bg-slate-700 px-1"
+              >+216</span
+            >
+            99 760 334
+          </div>
         </div>
+
+        <div class="flex flex-col gap-3">
+          <a href="https://github.com/hbib24" target="_blank"
+            ><i class="devicon-github-original" /> <span>Github/Hbib24</span></a
+          >
+          <a href="https://linkedin.com/in/hbib-bekir" target="_blank"
+            ><i class="devicon-linkedin-plain colored" /> In/hbib-bekir</a
+          >
+        </div>
+
+        <div>
+          <a
+            download="Hbib Bekir resume.pdf"
+            href="/src/assets/resume-fr.pdf"
+            class="flex items-center gap-1 p-2 rounded-xl bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
+            ><span class="material-symbols-outlined">download</span> Resume
+            FR</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="text-center flex items-center gap-1 justify-center border-t border-gray-400 dark:border-gray-700 p-4"
+      >
+        This website was made with
+        <div class="material-symbols-outlined text-red-500">favorite</div>
+        by yours truly
       </div>
     </section>
   </div>
