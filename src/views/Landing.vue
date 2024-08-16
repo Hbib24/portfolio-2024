@@ -2,11 +2,14 @@
 import Career from "../components/Career.vue";
 import Skills from "../components/Skills.vue";
 
+import resume from "../assets/resume-fr.pdf";
+
 export default {
   components: { Skills, Career },
   data() {
     return {
       scroll: 0,
+      resume,
     };
   },
   methods: {
@@ -198,7 +201,7 @@ export default {
       class="w-full z-20 relative text-lg dark:text-gray-200 dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 p-6"
     >
       <div
-        class="flex flex-wrap justify-around items-center mt-12 mb-12 max-w-screen-xl mx-auto"
+        class="flex md:flex-row flex-col gap-8 md:gap-0 justify-around items-center mt-12 mb-12 max-w-screen-xl mx-auto"
       >
         <div class="flex flex-col gap-3">
           <a class="flex items-center gap-2" href="mailto:habib.bekir@gmail.com"
@@ -233,7 +236,7 @@ export default {
         <div>
           <a
             download="Hbib Bekir resume.pdf"
-            href="/src/assets/resume-fr.pdf"
+            :href="resume"
             class="flex items-center gap-1 p-2 rounded-xl bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
             ><span class="material-symbols-outlined">download</span> Resume
             FR</a
@@ -241,13 +244,13 @@ export default {
         </div>
       </div>
 
-      <div
+      <span
         class="text-center flex items-center gap-1 justify-center border-t border-gray-400 dark:border-gray-700 p-4"
       >
         This website was made with
-        <div class="material-symbols-outlined text-red-500">favorite</div>
+        <span class="material-symbols-outlined text-red-500">favorite</span>
         by yours truly
-      </div>
+      </span>
     </section>
   </div>
 </template>
