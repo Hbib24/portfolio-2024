@@ -20,8 +20,10 @@ export default {
         designAndTools: [
           { name: "Figma", icon: "figma-original" },
           { name: "Ant Design", icon: "antdesign-original" },
+          { name: "PrimeNg", icon: "prime-original" },
           { name: "Tailwind", icon: "tailwindcss-original" },
           { name: "Material UI", icon: "materialui-original" },
+          { name: "Bootstrap", icon: "bootstrap-original" },
         ],
         databases: [
           { name: "MySql", icon: "mysql-original" },
@@ -30,6 +32,8 @@ export default {
         others: [
           { name: "Blender", icon: "blender-original" },
           { name: "Godot", icon: "godot-original" },
+          { name: "Unreal Engine", icon: "unrealengine-original" },
+          { name: "Unity", icon: "unity-original" },
         ],
       },
     };
