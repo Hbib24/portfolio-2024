@@ -90,7 +90,7 @@ export default {
             class="absolute hidden border-4 dark:border-slate-950 md:block w-6 h-6 bg-slate-200 rounded-full -start-3 border border-white dark:border-gray-900 dark:bg-gray-700"
           ></div>
           <time
-            class="mx-3 hidden md:block text-xl font-normal leading-none text-gray-400 dark:text-gray-500"
+            class="mx-3 hidden md:block text-xl font-normal leading-none text-slate-400 dark:text-gray-500"
             >{{
               $moment(project.date).locale($i18n.locale).format("MMM Y")
             }}</time
@@ -99,7 +99,7 @@ export default {
             class="rounded-2xl hover:shadow-2xl shadow hover:scale-105 duration-300 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full shadow md:m-6 md:flex-row flex flex-col"
           >
             <div
-              class="flex dark:bg-slate-800 bg-slate-200 relative justify-center items-center object-cover rounded-t-2xl md:w-[350px] md:rounded-none md:rounded-s-2xl overflow-hidden"
+              class="flex dark:bg-slate-800 bg-slate-200 relative justify-center items-center object-cover rounded-t-2xl md:w-[350px] h-40 md:h-auto md:rounded-none md:rounded-s-2xl overflow-hidden"
             >
               <img
                 v-if="project.images[0]"
@@ -123,7 +123,7 @@ export default {
             <div class="md:w-3/5 flex flex-col gap-8 p-4">
               <div>
                 <h5
-                  class="text-3xl font-bold text-gray-900 dark:text-white mb-2"
+                  class="text-3xl font-bold text-slate-950 dark:text-white mb-2"
                 >
                   {{ project.title }}
                 </h5>
@@ -131,13 +131,13 @@ export default {
                   {{ project.subtitle }}
                 </div>
               </div>
-              <p class="text-gray-500 dark:text-gray-400">
+              <p class="text-slate-500 dark:text-gray-400">
                 {{ $t(`projects.${project.id}`) }}
               </p>
               <div class="flex flex-wrap gap-4">
                 <div
                   v-for="icon in project.icons"
-                  class="rounded bg-slate-200 dark:bg-slate-200 p-1 px-2 flex gap-2 items-center"
+                  class="rounded bg-slate-200 dark:bg-slate-950 dark:text-white p-1 px-2 flex gap-2 items-center"
                 >
                   <img
                     class="w-8 h-8"

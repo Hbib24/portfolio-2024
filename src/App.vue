@@ -1,7 +1,8 @@
 <script>
 import Navbar from "./components/Navbar.vue";
+import Landing from "./views/Landing.vue";
 export default {
-  components: { Navbar },
+  components: { Navbar, Landing },
   data: () => ({
     darkMode: false,
   }),
@@ -24,6 +25,6 @@ export default {
 <template>
   <div :class="{ dark: darkMode }">
     <Navbar :darkMode="darkMode" :toggleDarkMode="toggleDarkMode" />
-    <RouterView />
+    <Landing />
   </div>
 </template>
