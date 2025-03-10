@@ -1,6 +1,9 @@
 <script>
 import rbk1 from "../assets/projects/rbk-1.jpg";
 import rbk2 from "../assets/projects/rbk-2.jpg";
+import ataa from "../assets/projects/ATAA.png";
+import insight from "../assets/projects/insight.png";
+import euromedi from "../assets/projects/euromedi.png";
 
 import moment from "moment/dist/moment";
 import "moment/dist/locale/fr";
@@ -52,7 +55,7 @@ export default {
           title: "Euromedi - Auditor",
           subtitle: "Freelance project | Front-end manager",
           icons: ["vuejs-original"],
-          images: [],
+          images: [euromedi],
           text: "projects.euromedi",
         },
         {
@@ -61,7 +64,7 @@ export default {
           title: "UI/UX developer at Insight Plus",
           subtitle: "Indeterminate contract",
           icons: ["react-original", "angular-original", "figma-original"],
-          images: [],
+          images: [insight],
           text: "projects.insight",
         },
         {
@@ -70,7 +73,7 @@ export default {
           title: "ATAA",
           subtitle: "Freelance project | Fullstack",
           icons: ["flutter-original", "nestjs-original"],
-          images: [],
+          images: [ataa],
           text: "projects.ataa",
         },
       ],
@@ -87,19 +90,22 @@ export default {
       <ol class="relative md:border-s border-slate-200 dark:border-gray-700">
         <li v-for="project in projects" class="md:ms-4 mb-16">
           <div
-            class="absolute hidden border-4 dark:border-slate-950 md:block w-6 h-6 bg-slate-200 rounded-full -start-3 border border-white dark:border-gray-900 dark:bg-gray-700"
+            class="absolute hidden border-4 dark:border-slate-950 md:block w-6 h-6 bg-slate-200 rounded-full -start-3 border-white dark:bg-gray-700"
           ></div>
           <time
             class="mx-3 hidden md:block text-xl font-normal leading-none text-slate-400 dark:text-gray-500"
             >{{
-              $moment(project.date).locale($i18n.locale).format("MMM Y")
+              $moment(project.date).locale($i18n.locale).format("MMMM Y")
             }}</time
           >
           <div
-            class="rounded-2xl hover:shadow-2xl shadow hover:scale-105 duration-300 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full shadow md:m-6 md:flex-row flex flex-col"
+            class="rounded-2xl hover:shadow-2xl shadow hover:scale-105 duration-300 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full md:m-6 md:flex-row flex flex-col"
           >
             <div
-              class="flex dark:bg-slate-800 bg-slate-200 relative justify-center items-center object-cover rounded-t-2xl md:w-[350px] h-40 md:h-auto md:rounded-none md:rounded-s-2xl overflow-hidden"
+              :class="
+                'flex relative justify-center items-center object-cover rounded-t-2xl md:w-[350px] h-40 md:h-auto md:rounded-none md:rounded-s-2xl overflow-hidden' +
+                `${!project.images[0] ? 'dark:bg-slate-800 bg-slate-200' : ''}`
+              "
             >
               <img
                 v-if="project.images[0]"
