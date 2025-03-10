@@ -7,6 +7,7 @@ export default {
           { name: "Javscript", icon: "javascript-original" },
           { name: "Typescript", icon: "typescript-original" },
           { name: "Dart", icon: "dart-original" },
+          { name: "Python", icon: "python-original" },
         ],
         technologies: [
           { name: "Angular", icon: "angular-original" },
