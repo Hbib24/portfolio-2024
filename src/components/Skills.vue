@@ -7,12 +7,14 @@ export default {
           { name: "Javscript", icon: "javascript-original" },
           { name: "Typescript", icon: "typescript-original" },
           { name: "Dart", icon: "dart-original" },
+          { name: "php", icon: "php-original" },
         ],
         technologies: [
           { name: "Angular", icon: "angular-original" },
           { name: "Vue", icon: "vuejs-original" },
           { name: "React", icon: "react-original" },
           { name: "Nest js", icon: "nestjs-original" },
+          { name: "php Symfony", icon: "symfony-original" },
           { name: "Express", icon: "express-original" },
           { name: "Flutter", icon: "flutter-original" },
           { name: "Socket.io", icon: "socketio-original" },
@@ -27,6 +29,7 @@ export default {
         ],
         databases: [
           { name: "MySql", icon: "mysql-original" },
+          { name: "Microsoft Sql Server", icon: "microsoftsqlserver-original" },
           { name: "MongoDB", icon: "mongodb-original" },
         ],
         others: [
