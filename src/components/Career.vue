@@ -63,7 +63,12 @@ export default {
           date: new Date("06-01-2022"),
           title: "UI/UX developer at Insight Plus",
           subtitle: "Indeterminate contract",
-          icons: ["react-original", "angular-original", "figma-original"],
+          icons: [
+            "react-original",
+            "angular-original",
+            "figma-original",
+            "symfony-original",
+          ],
           images: [insight],
           text: "projects.insight",
         },

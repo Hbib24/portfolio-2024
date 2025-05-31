@@ -7,6 +7,7 @@ export default {
           { name: "Javscript", icon: "javascript-original" },
           { name: "Typescript", icon: "typescript-original" },
           { name: "Dart", icon: "dart-original" },
+          { name: "php", icon: "php-original" },
           { name: "Python", icon: "python-original" },
         ],
         technologies: [
@@ -14,6 +15,7 @@ export default {
           { name: "Vue", icon: "vuejs-original" },
           { name: "React", icon: "react-original" },
           { name: "Nest js", icon: "nestjs-original" },
+          { name: "php Symfony", icon: "symfony-original" },
           { name: "Express", icon: "express-original" },
           { name: "Flutter", icon: "flutter-original" },
           { name: "Socket.io", icon: "socketio-original" },
@@ -21,13 +23,17 @@ export default {
         designAndTools: [
           { name: "Figma", icon: "figma-original" },
           { name: "Ant Design", icon: "antdesign-original" },
-          { name: "PrimeNg", icon: "prime-original" },
+          {
+            name: "PrimeNg",
+            icon: "https://www.primefaces.org/wp-content/uploads/2018/05/primeng-logo.png",
+          },
           { name: "Tailwind", icon: "tailwindcss-original" },
           { name: "Material UI", icon: "materialui-original" },
           { name: "Bootstrap", icon: "bootstrap-original" },
         ],
         databases: [
           { name: "MySql", icon: "mysql-original" },
+          { name: "Microsoft Sql Server", icon: "microsoftsqlserver-original" },
           { name: "MongoDB", icon: "mongodb-original" },
         ],
         others: [
@@ -95,9 +101,13 @@ export default {
         >
           <img
             class="w-1/2"
-            :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${
-              skill.icon.split('-')[0]
-            }/${skill.icon}.svg`"
+            :src="
+              skill.name == 'PrimeNg'
+                ? skill.icon
+                : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${
+                    skill.icon.split('-')[0]
+                  }/${skill.icon}.svg`
+            "
           />
           <h2
             class="text-2xl font-bold text-gray-900 lg:text-xl dark:text-gray-400 text-center"

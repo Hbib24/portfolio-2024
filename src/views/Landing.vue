@@ -6,6 +6,18 @@ import resume from "../assets/resume-fr.pdf";
 
 export default {
   components: { Skills, Career },
+  computed: {
+    age() {
+      const birthDate = new Date(1998, 3, 24); // Months are 0-indexed: 3 = April
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    },
+  },
   data() {
     return {
       scroll: 0,
@@ -179,7 +191,7 @@ export default {
         <div class="flex justify-center">
           <div
             class="max-w-screen-xl text-lg font-normal text-gray-900 lg:text-xl dark:text-gray-400 py-10 md:py-20"
-            v-html="$t('bio')"
+            v-html="$t('bio', [age])"
           ></div>
         </div>
       </div>
