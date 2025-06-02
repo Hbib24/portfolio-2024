@@ -22,6 +22,7 @@ export default {
         ],
         designAndTools: [
           { name: "Figma", icon: "figma-original" },
+          { name: "Postman", icon: "postman-original" },
           { name: "Ant Design", icon: "antdesign-original" },
           {
             name: "PrimeNg",
@@ -29,6 +30,7 @@ export default {
           },
           { name: "Tailwind", icon: "tailwindcss-original" },
           { name: "Material UI", icon: "materialui-original" },
+          { name: "Vuetify", icon: "vuetify-original" },
           { name: "Bootstrap", icon: "bootstrap-original" },
         ],
         databases: [
