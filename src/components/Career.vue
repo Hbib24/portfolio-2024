@@ -61,7 +61,7 @@ export default {
         {
           id: "insight",
           date: new Date("06-01-2022"),
-          title: "UI/UX developer at Insight Plus",
+          title: "Full-Stack developer at Insight Plus",
           subtitle: "Indeterminate contract",
           icons: [
             "react-original",
