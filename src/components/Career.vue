@@ -91,7 +91,7 @@ export default {
   <div
     class="w-full bg-sky-50 md:bg-white dark:bg-slate-900 md:dark:bg-slate-950 dark:shadow-inner py-6 md:p-6"
   >
-    <div class="max-w-screen-lg mx-auto p-6">
+    <div class="max-w-(--breakpoint-lg) mx-auto p-6">
       <ol class="relative md:border-s border-slate-200 dark:border-gray-700">
         <li v-for="project in projects" class="md:ms-4 mb-16">
           <div
@@ -104,7 +104,7 @@ export default {
             }}</time
           >
           <div
-            class="rounded-2xl hover:shadow-2xl shadow hover:scale-105 duration-300 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full md:m-6 md:flex-row flex flex-col"
+            class="rounded-2xl hover:shadow-2xl shadow-sm hover:scale-105 duration-300 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full md:m-6 md:flex-row flex flex-col"
           >
             <div
               :class="
@@ -138,7 +138,7 @@ export default {
                 >
                   {{ project.title }}
                 </h5>
-                <div class="rounded bg-slate-200 dark:bg-slate-200 w-fit px-1">
+                <div class="rounded-sm bg-slate-200 dark:bg-slate-200 w-fit px-1">
                   {{ project.subtitle }}
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default {
               <div class="flex flex-wrap gap-4">
                 <div
                   v-for="icon in project.icons"
-                  class="rounded bg-slate-200 dark:bg-slate-950 dark:text-white p-1 px-2 flex gap-2 items-center"
+                  class="rounded-sm bg-slate-200 dark:bg-slate-950 dark:text-white p-1 px-2 flex gap-2 items-center"
                 >
                   <img
                     class="w-8 h-8"

@@ -97,7 +97,7 @@ export default {
             style="animation-delay: 600ms"
           >
             <div
-              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
+              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-16 rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
             >
               <div class="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
                 <img
@@ -121,7 +121,7 @@ export default {
           </div>
           <div
             style="animation-delay: 300ms"
-            class="relative animate__animated animate__fadeInUp border-slate-900 dark:border-slate-900 bg-slate-900 border-[8px] md:border-[14px] rounded-[2rem] md:rounded-[2.5rem] md:h-[600px] md:max-w-[300px] h-[300px] max-w-[150px]"
+            class="relative animate__animated animate__fadeInUp border-slate-900 dark:border-slate-900 bg-slate-900 border-8 md:border-14 rounded-4xl md:rounded-[2.5rem] md:h-[600px] md:max-w-[300px] h-[300px] max-w-[150px]"
           >
             <div
               class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[10px] md:-start-[17px] top-[72px] rounded-s-lg"
@@ -136,7 +136,7 @@ export default {
               class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[10px] md:-end-[17px] top-[142px] rounded-e-lg"
             ></div>
             <div
-              class="rounded-[1.7rem] md:rounded-[2rem] overflow-hidden w-[125px] md:w-[272px] md:h-[572px] w-full h-[285px] bg-white dark:bg-gray-800"
+              class="rounded-[1.7rem] md:rounded-4xl overflow-hidden w-[125px] md:w-[272px] md:h-[572px] w-full h-[285px] bg-white dark:bg-gray-800"
             >
               <img
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
@@ -155,7 +155,7 @@ export default {
             style="animation-delay: 600ms"
           >
             <div
-              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
+              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-8 rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
             >
               <div
                 class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800"
@@ -190,7 +190,7 @@ export default {
       >
         <div class="flex justify-center">
           <div
-            class="max-w-screen-xl text-lg font-normal text-gray-900 lg:text-xl dark:text-gray-400 py-10 md:py-20"
+            class="max-w-(--breakpoint-xl) text-lg font-normal text-gray-900 lg:text-xl dark:text-gray-400 py-10 md:py-20"
             v-html="$t('bio', [age])"
           ></div>
         </div>
@@ -213,7 +213,7 @@ export default {
       class="w-full z-20 relative text-lg dark:text-gray-200 dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 p-6"
     >
       <div
-        class="flex md:flex-row flex-col gap-8 md:gap-0 justify-around items-center mt-12 mb-12 max-w-screen-xl mx-auto"
+        class="flex md:flex-row flex-col gap-8 md:gap-0 justify-around items-center mt-12 mb-12 max-w-(--breakpoint-xl) mx-auto"
       >
         <div class="flex flex-col gap-3">
           <a class="flex items-center gap-2" href="mailto:habib.bekir@gmail.com"
@@ -222,14 +222,14 @@ export default {
           >
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined"> call </span>
-            <span class="rounded bg-slate-300 dark:bg-slate-700 px-1"
+            <span class="rounded-sm bg-slate-300 dark:bg-slate-700 px-1"
               >+216</span
             >
             24 440 222
           </div>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined"> call </span>
-            <span class="rounded bg-slate-300 dark:bg-slate-700 px-1"
+            <span class="rounded-sm bg-slate-300 dark:bg-slate-700 px-1"
               >+216</span
             >
             99 760 334

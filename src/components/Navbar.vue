@@ -31,13 +31,13 @@ export default {
           .getElementById("navbar-container")
           .classList.remove("md:rounded-full");
         document.getElementById("navbar").classList.remove("md:p-6");
-        document.getElementById("navbar").classList.add("shadow");
+        document.getElementById("navbar").classList.add("shadow-sm");
       } else {
         document
           .getElementById("navbar-container")
           .classList.add("md:rounded-full");
         document.getElementById("navbar").classList.add("md:p-6");
-        document.getElementById("navbar").classList.remove("shadow");
+        document.getElementById("navbar").classList.remove("shadow-sm");
       }
     });
   },
@@ -51,7 +51,7 @@ export default {
       class="bg-white dark:bg-slate-950 md:rounded-full"
     >
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-6"
+        class="max-w-(--breakpoint-xl) flex flex-wrap items-center justify-between mx-auto py-4 px-6"
       >
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <div>
@@ -69,7 +69,7 @@ export default {
           data-drawer-placement="top"
           aria-controls="drawer-top"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-expanded="false"
         >
           <span class="sr-only">Open main menu</span>
@@ -102,28 +102,28 @@ export default {
               href="#about"
               @click.prevent="scrollTo('about')"
               aria-current="true"
-              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-none focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-hidden focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
             >
               {{ $t("sections.about") }}
             </a>
             <a
               href="#skills"
               @click.prevent="scrollTo('skills')"
-              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-none focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-hidden focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
             >
               {{ $t("sections.skills") }}
             </a>
             <a
               href="#career"
               @click.prevent="scrollTo('career')"
-              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-none focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-hidden focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
             >
               {{ $t("sections.background") }}
             </a>
             <a
               href="#contact"
               @click.prevent="scrollTo('contact')"
-              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-none focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+              class="block w-full p-4 border-b border-gray-200 cursor-pointer hover:bg-white hover:text-blue-700 focus:outline-hidden focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
             >
               {{ $t("sections.contact") }}
             </a>
@@ -137,7 +137,7 @@ export default {
                 class="sr-only peer"
               />
               <div
-                class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+                class="relative w-11 h-6 bg-gray-200 peer-focus:outline-hidden peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:rtl:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
               ></div>
               <span
                 class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -179,7 +179,7 @@ export default {
               <a
                 href="#skills"
                 @click.prevent="scrollTo('skills')"
-                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >{{ $t("sections.skills") }}</a
               >
             </li>
@@ -187,7 +187,7 @@ export default {
               <a
                 href="#career"
                 @click.prevent="scrollTo('career')"
-                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >{{ $t("sections.background") }}</a
               >
             </li>
@@ -195,7 +195,7 @@ export default {
               <a
                 href="#contact"
                 @click.prevent="scrollTo('contact')"
-                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >{{ $t("sections.contact") }}</a
               >
             </li>
@@ -208,7 +208,7 @@ export default {
                   class="sr-only peer"
                 />
                 <div
-                  class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+                  class="relative w-11 h-6 bg-gray-200 peer-focus:outline-hidden peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:rtl:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
                 ></div>
                 <span
                   class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
