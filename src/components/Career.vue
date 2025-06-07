@@ -89,22 +89,22 @@ export default {
 
 <template>
   <div
-    class="w-full bg-sky-50 md:bg-white dark:bg-slate-900 md:dark:bg-slate-950 dark:shadow-inner py-6 md:p-6"
+    class="w-full bg-gray-100 md:bg-white dark:bg-slate-900 md:dark:bg-slate-950 dark:shadow-inner py-6 md:p-6"
   >
     <div class="max-w-(--breakpoint-lg) mx-auto p-6">
-      <ol class="relative md:border-s border-slate-200 dark:border-gray-700">
+      <ol class="relative md:border-s border-slate-400 dark:border-gray-700">
         <li v-for="project in projects" class="md:ms-4 mb-16">
           <div
-            class="absolute hidden border-4 dark:border-slate-950 md:block w-6 h-6 bg-slate-200 rounded-full -start-3 border-white dark:bg-gray-700"
+            class="absolute hidden border-4 dark:border-slate-950 md:block w-6 h-6 bg-slate-800 rounded-full -start-3 border-white dark:bg-gray-700"
           ></div>
           <time
-            class="mx-3 hidden md:block text-xl font-normal leading-none text-slate-400 dark:text-gray-500"
+            class="mx-3 hidden md:block text-xl font-normal leading-none text-slate-800 dark:text-gray-500"
             >{{
               $moment(project.date).locale($i18n.locale).format("MMMM Y")
             }}</time
           >
           <div
-            class="rounded-2xl hover:shadow-2xl shadow-sm hover:scale-105 duration-300 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full md:m-6 md:flex-row flex flex-col"
+            class="rounded-2xl hover:shadow-2xl shadow-sm hover:scale-105 duration-300 border border-slate-200 dark:border-slate-800 bg-white md:bg-white dark:bg-slate-950 dark:md:bg-slate-900 w-full md:m-6 md:flex-row flex flex-col"
           >
             <div
               :class="
@@ -138,7 +138,9 @@ export default {
                 >
                   {{ project.title }}
                 </h5>
-                <div class="rounded-sm bg-slate-200 dark:bg-slate-200 w-fit px-1">
+                <div
+                  class="rounded-sm dark:bg-white bg-slate-800 dark:text-inherit text-white w-fit px-1"
+                >
                   {{ project.subtitle }}
                 </div>
               </div>
@@ -148,7 +150,7 @@ export default {
               <div class="flex flex-wrap gap-4">
                 <div
                   v-for="icon in project.icons"
-                  class="rounded-sm bg-slate-200 dark:bg-slate-950 dark:text-white p-1 px-2 flex gap-2 items-center"
+                  class="rounded-sm bg-gray-100 dark:bg-slate-950 text-slate-950 dark:text-white p-1 px-2 flex gap-2 items-center"
                 >
                   <img
                     class="w-8 h-8"
