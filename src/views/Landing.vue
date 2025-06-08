@@ -220,16 +220,13 @@ export default {
           <div
             class="rounded-[1.7rem] relative z-10 md:rounded-[2rem] overflow-hidden md:w-[272px] md:h-[572px] w-full h-[285px] bg-white dark:bg-gray-800"
           >
-            <img
-              src="/images/dash-phone-light.png"
-              class="dark:hidden md:w-[272px] md:h-[572px] h-[285px]"
-              alt=""
-            />
-            <img
-              src="/images/dash-phone-dark.png"
-              class="hidden dark:block md:w-[272px] md:h-[572px] h-[285px]"
-              alt=""
-            />
+            <video
+              autoplay
+              muted
+              loop
+              style="pointer-events: none"
+              src="/phone-demo.webm"
+            ></video>
           </div>
         </div>
         <div
@@ -252,16 +249,13 @@ export default {
             class="mx-auto border-slate-900 dark:border-slate-950 bg-slate-950 dark:md:border-slate-900 md:bg-slate-900 border-8 md:border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
           >
             <div class="rounded-lg overflow-hidden h-[140px] md:h-[262px]">
-              <img
-                src="/images/dash-desktop-light.png"
-                class="dark:hidden h-[140px] md:h-[262px] w-full"
-                alt=""
-              />
-              <img
-                src="/images/dash-desktop-dark.png"
-                class="hidden dark:block h-[140px] md:h-[262px] w-full"
-                alt=""
-              />
+              <video
+                autoplay
+                muted
+                loop
+                style="pointer-events: none"
+                src="/desktop-demo.webm"
+              ></video>
             </div>
           </div>
           <div
