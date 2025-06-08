@@ -2,7 +2,8 @@
 import Career from "../components/Career.vue";
 import Skills from "../components/Skills.vue";
 
-import resume from "../assets/resume-fr.pdf";
+import resumeFr from "../assets/resume-fr.pdf";
+import resumeEn from "../assets/resume-en.pdf";
 
 export default {
   components: { Skills, Career },
@@ -21,7 +22,8 @@ export default {
   data() {
     return {
       scroll: 0,
-      resume,
+      resumeFr,
+      resumeEn,
     };
   },
   methods: {
@@ -40,7 +42,7 @@ export default {
 
 <template>
   <div
-    class="dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 overflow-hidden h-full"
+    class="dark:bg-slate-950 md:bg-slate-100 bg-white md:dark:bg-slate-900 overflow-hidden h-full"
   >
     <div class="relative">
       <section class="h-dvh md:p-6 overflow-hidden">
@@ -97,17 +99,17 @@ export default {
             style="animation-delay: 600ms"
           >
             <div
-              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
+              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-16 rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
             >
-              <div class="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
+              <div class="rounded-lg overflow-hidden h-[140px] md:h-[262px]">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac.png"
-                  class="dark:hidden h-[140px] md:h-[262px] w-full rounded-xl"
+                  src="/images/dash-desktop-light.png"
+                  class="dark:hidden h-[140px] md:h-[262px] w-full"
                   alt=""
                 />
                 <img
-                  src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac-dark.png"
-                  class="hidden dark:block h-[140px] md:h-[262px] w-full rounded-xl"
+                  src="/images/dash-desktop-dark.png"
+                  class="hidden dark:block h-[140px] md:h-[262px] w-full"
                   alt=""
                 />
               </div>
@@ -121,7 +123,7 @@ export default {
           </div>
           <div
             style="animation-delay: 300ms"
-            class="relative animate__animated animate__fadeInUp border-slate-900 dark:border-slate-900 bg-slate-900 border-[8px] md:border-[14px] rounded-[2rem] md:rounded-[2.5rem] md:h-[600px] md:max-w-[300px] h-[300px] max-w-[150px]"
+            class="relative animate__animated animate__fadeInUp border-slate-900 dark:border-slate-900 bg-slate-900 border-8 md:border-14 rounded-4xl md:rounded-[2.5rem] md:h-[600px] md:max-w-[300px] h-[300px] max-w-[150px]"
           >
             <div
               class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[10px] md:-start-[17px] top-[72px] rounded-s-lg"
@@ -136,15 +138,15 @@ export default {
               class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[10px] md:-end-[17px] top-[142px] rounded-e-lg"
             ></div>
             <div
-              class="rounded-[1.7rem] md:rounded-[2rem] overflow-hidden w-[125px] md:w-[272px] md:h-[572px] w-full h-[285px] bg-white dark:bg-gray-800"
+              class="rounded-[1.7rem] md:rounded-4xl overflow-hidden w-[125px] md:w-[272px] md:h-[572px] w-full h-[285px] bg-white dark:bg-gray-800"
             >
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+                src="/images/dash-phone-light.png"
                 class="dark:hidden md:w-[272px] md:h-[572px] h-[285px]"
                 alt=""
               />
               <img
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+                src="/images/dash-phone-dark.png"
                 class="hidden dark:block md:w-[272px] md:h-[572px] h-[285px]"
                 alt=""
               />
@@ -155,18 +157,18 @@ export default {
             style="animation-delay: 600ms"
           >
             <div
-              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
+              class="relative mx-auto border-slate-900 dark:border-slate-900 bg-slate-900 border-8 rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
             >
               <div
                 class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800"
               >
                 <img
-                  src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png"
+                  src="/images/dash-desktop-light.png"
                   class="dark:hidden h-[156px] md:h-[278px] w-full rounded-lg"
                   alt=""
                 />
                 <img
-                  src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen-dark.png"
+                  src="/images/dash-desktop-dark.png"
                   class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg"
                   alt=""
                 />
@@ -184,22 +186,129 @@ export default {
       </section>
     </div>
 
-    <section id="about" class="w-full relative pt-6 z-20">
-      <div
-        class="overflow-hidden w-full bg-sky-50 md:bg-white dark:bg-slate-900 md:dark:bg-slate-950 dark:shadow-inner p-6"
-      >
+    <section
+      id="about"
+      class="w-full relative pt-6 z-20 bg-gray-100 md:bg-white dark:bg-slate-900 md:dark:bg-slate-950"
+    >
+      <div class="overflow-hidden w-full p-6">
         <div class="flex justify-center">
           <div
-            class="max-w-screen-xl text-lg font-normal text-gray-900 lg:text-xl dark:text-gray-400 py-10 md:py-20"
+            class="max-w-screen-xl text-lg font-normal text-pretty text-gray-900 lg:text-2xl dark:text-gray-400 py-10 md:py-20"
             v-html="$t('bio', [age])"
           ></div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-center items-center w-full gap-18 intro:gap-32 intro:my-20 relative"
+      >
+        <div
+          class="!scale-110 border-slate-900 dark:border-slate-950 md:dark:border-slate-900 md:dark:bg-slate-900 bg-slate-950 border-[8px] md:border-[14px] rounded-[2rem] md:rounded-[2.5rem] md:h-[600px] md:max-w-[300px] h-[300px] max-w-[150px]"
+        >
+          <div
+            class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[10px] md:-start-[17px] top-[72px] rounded-s-lg"
+          ></div>
+          <div
+            class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[10px] md:-start-[17px] top-[124px] rounded-s-lg"
+          ></div>
+          <div
+            class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[10px] md:-start-[17px] top-[178px] rounded-s-lg"
+          ></div>
+          <div
+            class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[10px] md:-end-[17px] top-[142px] rounded-e-lg"
+          ></div>
+          <div
+            class="rounded-[1.7rem] relative z-10 md:rounded-[2rem] overflow-hidden md:w-[272px] md:h-[572px] w-full h-[285px] bg-white dark:bg-gray-800"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              style="pointer-events: none"
+              src="/phone-demo.webm"
+            ></video>
+          </div>
+        </div>
+        <div
+          class="lg:max-w-md text-lg py-6 intro:py-0 font-normal -z-10 flex flex-col md:block justify-end h-64 md:h-fit md:top-0 top-60 text-gray-900 md:text-2xl absolute md:relative dark:text-gray-400 text-pretty px-6 intro:px-0 dark:bg-slate-800 bg-white intro:dark:bg-transparent intro:bg-transparent w-dvw intro:w-auto"
+        >
+          <div class="max-w-md mx-auto" v-html="$t('intro.1')"></div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-wrap-reverse md:flex-row justify-center items-center w-full intro:gap-64 mt-72"
+      >
+        <div
+          class="lg:max-w-md text-lg font-normal z-10 text-gray-900 md:text-2xl dark:text-gray-400 text-pretty px-6 intro:px-0 dark:bg-slate-800 bg-white intro:dark:bg-transparent intro:bg-transparent w-dvw lg:w-auto py-12 lg:py-0"
+        >
+          <div class="max-w-md mx-auto" v-html="$t('intro.2')"></div>
+        </div>
+        <div class="md:!scale-150 scale-110">
+          <div
+            class="mx-auto border-slate-900 dark:border-slate-950 bg-slate-950 dark:md:border-slate-900 md:bg-slate-900 border-8 md:border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
+          >
+            <div class="rounded-lg overflow-hidden h-[140px] md:h-[262px]">
+              <video
+                autoplay
+                muted
+                loop
+                style="pointer-events: none"
+                src="/desktop-demo.webm"
+              ></video>
+            </div>
+          </div>
+          <div
+            class="mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px]"
+          ></div>
+          <div
+            class="mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[142px]"
+          ></div>
+        </div>
+      </div>
+
+      <div
+        class="hidden lg:block relative bg-gray-900 dark:bg-gray-700 mt-24 !z-20 h-12 mx-auto rounded-full desk"
+      ></div>
+
+      <div
+        class="flex flex-wrap justify-center items-center w-full intro:pb-20 lg:pb-0 intro:gap-32 mt-20 intro:mt-60"
+      >
+        <div class="dark:bg-gray-700 bg-gray-800 p-4 rounded-t-xl">
+          <div class="flex flex-col gap-2">
+            <div
+              v-for="i of [1, 2, 3, 4, 5]"
+              class="bg-gray-900 flex items-center justify-between px-4 w-[60vw] h-12 md:w-96 md:h-20 rounded-lg"
+            >
+              <div
+                class="w-6 h-6 md:h-8 md:w-8 rounded-full bg-blue-500 border-4 border-gray-700"
+              ></div>
+              <div class="h-1 md:h-2 w-2/3 bg-gray-700 rounded-full"></div>
+              <div
+                class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-400 hdd-light"
+              ></div>
+              <div
+                class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-400 hdd-light"
+                style="animation-delay: 200ms"
+              ></div>
+              <div
+                class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-400 hdd-light"
+                style="animation-delay: 400ms"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="lg:max-w-2xl text-lg font-normal text-gray-900 md:text-2xl dark:text-gray-400 text-pretty px-6 intro:px-0 dark:bg-slate-800 bg-white intro:dark:bg-transparent intro:bg-transparent w-dvw intro:w-auto py-12 lg:py-0"
+        >
+          <div class="max-w-md mx-auto" v-html="$t('intro.3')"></div>
         </div>
       </div>
     </section>
 
     <section
       id="skills"
-      class="w-full py-10 md:py-20 relative z-20 dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900"
+      class="w-full py-10 md:py-20 relative z-20 dark:bg-slate-950 md:bg-slate-100 bg-white md:dark:bg-slate-900"
     >
       <Skills />
     </section>
@@ -210,10 +319,10 @@ export default {
 
     <section
       id="contact"
-      class="w-full z-20 relative text-lg dark:text-gray-200 dark:bg-slate-950 md:bg-slate-200 bg-white md:dark:bg-slate-900 p-6"
+      class="w-full z-20 relative text-lg dark:text-gray-200 dark:bg-slate-950 md:bg-gray-100 bg-white md:dark:bg-slate-900"
     >
       <div
-        class="flex md:flex-row flex-col gap-8 md:gap-0 justify-around items-center mt-12 mb-12 max-w-screen-xl mx-auto"
+        class="flex md:flex-row flex-col gap-8 md:gap-0 justify-around items-center mt-12 mb-12 max-w-(--breakpoint-xl) mx-auto p-6"
       >
         <div class="flex flex-col gap-3">
           <a class="flex items-center gap-2" href="mailto:habib.bekir@gmail.com"
@@ -222,14 +331,14 @@ export default {
           >
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined"> call </span>
-            <span class="rounded bg-slate-300 dark:bg-slate-700 px-1"
+            <span class="rounded-sm bg-gray-200 dark:bg-slate-700 px-1"
               >+216</span
             >
             24 440 222
           </div>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined"> call </span>
-            <span class="rounded bg-slate-300 dark:bg-slate-700 px-1"
+            <span class="rounded-sm bg-gray-200 dark:bg-slate-700 px-1"
               >+216</span
             >
             99 760 334
@@ -245,22 +354,31 @@ export default {
           >
         </div>
 
-        <div>
+        <div class="flex flex-col gap-3">
           <a
-            download="Hbib Bekir resume.pdf"
-            :href="resume"
-            class="flex items-center gap-1 p-2 rounded-xl bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
+            download="Hbib Bekir Resume.pdf"
+            :href="resumeFr"
+            class="flex items-center gap-1 p-2 rounded-xl bg-gray-200 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
             ><span class="material-symbols-outlined">download</span> Resume
             FR</a
+          >
+          <a
+            download="Hbib Bekir Resume.pdf"
+            :href="resumeEn"
+            class="flex items-center gap-1 p-2 rounded-xl bg-gray-200 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
+            ><span class="material-symbols-outlined">download</span> Resume
+            EN</a
           >
         </div>
       </div>
 
       <span
-        class="text-center flex items-center gap-1 justify-center border-t border-gray-400 dark:border-gray-700 p-4"
+        class="text-center text-sm md:text-base flex items-center gap-1 justify-center border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-800 py-4"
       >
         This website was made with
-        <span class="material-symbols-outlined text-red-500">favorite</span>
+        <span class="material-symbols-outlined animate-bounce text-red-500"
+          >favorite</span
+        >
         by yours truly
       </span>
     </section>
